@@ -1,0 +1,56 @@
+/* Basic reset and font */
+:root{
+  --accent:#ff6b9a;
+  --bg-overlay: rgba(0,0,0,0.45);
+  --card-bg: rgba(255,255,255,0.06);
+}
+html,body,#root{height:100%;}
+body{margin:0;font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;background:#000;color:#fff;}
+html{
+  scroll-behavior:smooth;
+}
+.app-root{min-height:100vh;position:relative;overflow:hidden}
+
+/* Background image layer */
+.bg-image{position:fixed;inset:0;background-image: url('./IMG-20240204-WA0061.jpg');background-size:cover;background-position:center;background-attachment:fixed;transition:opacity 1s ease, transform 1s ease;filter:brightness(0.6);z-index:0}
+
+/* Content area */
+.content{position:relative;z-index:2;padding:24px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.site-title{font-weight:700;font-size:26px;text-shadow:0 2px 10px rgba(0,0,0,0.6)}
+.nav{display:flex;gap:10px}
+.nav-link{color:rgba(255,255,255,0.9);text-decoration:none;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.06)}
+.nav-link:hover{background:rgba(255,255,255,0.12)}
+
+.main{max-width:920px;margin:20px auto;text-align:center}
+.section{margin-bottom:28px}
+.card{backdrop-filter:blur(6px);background:var(--card-bg);border-radius:16px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,0.6);text-align:right}
+.hero-title{font-size:32px;margin:0 0 10px}
+.lead{font-size:16px;line-height:1.6;margin-bottom:16px}
+.actions{display:flex;justify-content:center;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border-radius:10px;text-decoration:none;color:#fff}
+.btn.primary{background:var(--accent);box-shadow:0 6px 18px rgba(255,107,154,0.14);font-weight:600}
+.btn.outline{background:transparent;border:1px solid rgba(255,255,255,0.12)}
+
+.section-title{font-size:20px;margin-bottom:10px;font-weight:700}
+.story-text{text-align:right}
+.countdown-card{display:inline-block}
+.countdown{display:flex;gap:12px;justify-content:center}
+.count-item{padding:8px 12px}
+.count-number{font-size:22px;font-weight:700}
+.count-label{font-size:12px;color:rgba(255,255,255,0.85)}
+.muted{font-size:12px;opacity:0.85;margin-top:8px}
+.footer{margin-top:24px;opacity:0.9}
+
+/* Responsive */
+@media (min-width:768px){
+  .site-title{font-size:34px}
+  .hero-title{font-size:44px}
+  .lead{font-size:18px}
+}
+
+/* Small decorative heart */
+.footer p{display:inline-flex;align-items:center;gap:8px}
+
+/* Ensure readable when background very dark/light */
+.card, .nav-link{border:1px solid rgba(255,255,255,0.03)}
