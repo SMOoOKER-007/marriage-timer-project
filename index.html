@@ -49,7 +49,15 @@
 
           <section id="countdown" class="section">
             <div class="card countdown-card">
-              <h4 class="section-title">العدّ التنازلي ليوم الزفاف (22 أوت 2026)</h4>
+              <h4 class="section-title">العدّ التنازلي ليوم كتب الكتاب (15&#160;أوت&#160;2026)</h4>
+              <div class="countdown">
+                <div class="count-item"><div class="count-number" id="akd-d">--</div><div class="count-label">أيام</div></div>
+                <div class="count-item"><div class="count-number" id="akd-h">--</div><div class="count-label">ساعات</div></div>
+                <div class="count-item"><div class="count-number" id="akd-m">--</div><div class="count-label">دقائق</div></div>
+                <div class="count-item"><div class="count-number" id="akd-s">--</div><div class="count-label">ثواني</div></div>
+              </div>
+
+              <h4 class="section-title">العدّ التنازلي ليوم الزفاف (22&#160;أوت&#160;2026)</h4>
               <div class="countdown">
                 <div class="count-item"><div class="count-number" id="cd-d">--</div><div class="count-label">أيام</div></div>
                 <div class="count-item"><div class="count-number" id="cd-h">--</div><div class="count-label">ساعات</div></div>
@@ -66,23 +74,32 @@
 
     <script>
   (function(){
-  // Countdown
-  const wedding = new Date('2026-08-22T12:00:00');
-        const els = { d:document.getElementById('cd-d'), h:document.getElementById('cd-h'), m:document.getElementById('cd-m'), s:document.getElementById('cd-s') };
-        function update(){
-          const now = new Date();
-          const diff = wedding - now;
-          if(diff<=0){ els.d.textContent='0'; els.h.textContent='0'; els.m.textContent='0'; els.s.textContent='0'; return; }
-          const d = Math.floor(diff / (1000*60*60*24));
-          const h = Math.floor((diff / (1000*60*60)) % 24);
-          const m = Math.floor((diff / (1000*60)) % 60);
-          const s = Math.floor((diff / 1000) % 60);
-          els.d.textContent = d; els.h.textContent = h; els.m.textContent = m; els.s.textContent = s;
-        }
-        update(); setInterval(update,1000);
+    // Dates
+    const akad = new Date('2026-08-15T12:00:00');
+    const wedding = new Date('2026-08-22T12:00:00');
+    // Elements
+    const ak = { d:document.getElementById('akd-d'), h:document.getElementById('akd-h'), m:document.getElementById('akd-m'), s:document.getElementById('akd-s') };
+    const wd = { d:document.getElementById('cd-d'), h:document.getElementById('cd-h'), m:document.getElementById('cd-m'), s:document.getElementById('cd-s') };
 
-      })();
+    function setValues(els, diff){
+      if(!els || !els.d) return;
+      if(diff<=0){ els.d.textContent='0'; els.h.textContent='0'; els.m.textContent='0'; els.s.textContent='0'; return; }
+      const d = Math.floor(diff / (1000*60*60*24));
+      const h = Math.floor((diff / (1000*60*60)) % 24);
+      const m = Math.floor((diff / (1000*60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+      els.d.textContent = d; els.h.textContent = h; els.m.textContent = m; els.s.textContent = s;
+    }
+
+    function update(){
+      const now = Date.now();
+      setValues(ak, akad.getTime() - now);
+      setValues(wd, wedding.getTime() - now);
+    }
+
+    update();
+    setInterval(update, 1000);
+  })();
     </script>
   </body>
-
 </html>
