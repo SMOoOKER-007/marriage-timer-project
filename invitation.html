@@ -29,8 +29,8 @@
       .blessing{font-size:18px;text-align:center;margin-bottom:12px}
 
       /* Composed invitation styles (inspired by provided images) */
-      .invite-mech{position:relative;display:block;width:760px;max-width:calc(100% - 24px);margin:0 auto;overflow:hidden;perspective:1000px}
-      .sleeve{position:absolute;left:0;top:0;width:320px;min-height:520px;background:#bfe6ff;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.35);padding:22px;cursor:pointer;border:none;transform-origin:left center;transition:transform .7s cubic-bezier(0.22,1,0.36,1), box-shadow .4s ease}
+      .invite-mech{position:relative;display:block;width:min(760px,100% - 16px);margin:0 auto;overflow:hidden;perspective:1000px}
+      .sleeve{position:absolute;left:0;top:0;width:min(320px,44vw);min-height:520px;background:#bfe6ff;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.35);padding:22px;cursor:pointer;border:none;transform-origin:left center;transition:transform .7s cubic-bezier(0.22,1,0.36,1), box-shadow .4s ease}
       .sleeve::before{content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;background:
         radial-gradient(circle at 20% 18%,rgba(255,255,255,.55),transparent 60%),
         radial-gradient(circle at 80% 80%,rgba(255,255,255,.35),transparent 55%)}
@@ -78,7 +78,7 @@
       .invite-inner::after{content:"";position:absolute;top:0;bottom:0;left:0;width:76px;border-top-left-radius:16px;border-bottom-left-radius:16px;opacity:.2;
         background:#eef8ff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='240' viewBox='0 0 80 240'><g fill='none' stroke='%230e7ac7' stroke-width='2' opacity='0.18'><path d='M70 30 C60 10 40 10 30 30' /><path d='M66 60 C56 40 36 42 26 62' /><path d='M68 100 C58 80 34 78 24 100' /><path d='M62 140 C52 120 32 120 20 138' /><path d='M70 180 C56 160 36 162 22 182' /><path d='M72 220 C58 200 36 200 20 218' /></g><g fill='none' stroke='%230e7ac7' stroke-width='1.4' opacity='0.12'><path d='M28 26 q-8 10 0 22' /><path d='M24 58 q-8 10 0 22' /><path d='M22 96 q-8 10 0 22' /><path d='M18 136 q-8 10 0 22' /><path d='M16 176 q-8 10 0 22' /></g></svg>") left top / 80px 240px repeat-y;}
       .sleeve:focus-visible{outline:2px solid #fff;outline-offset:3px}
-      .invite-mech.open .sleeve{transform:translateX(430px) rotateY(-12deg);box-shadow:0 8px 24px rgba(0,0,0,0.28)}
+      .invite-mech.open .sleeve{transform:translateX(min(430px,52vw)) rotateY(-12deg);box-shadow:0 8px 24px rgba(0,0,0,0.28)}
       .invite-mech.open .invite-inner{opacity:1;transform:translateX(0);filter:blur(0)}
 
       /* Paper noise overlay */
