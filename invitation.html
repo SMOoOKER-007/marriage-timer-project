@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>بطاقة الدعوة — حسان وشيماء</title>
+    <link rel="stylesheet" href="./love.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+      .invitation-card{max-width:840px;margin:24px auto;padding:24px;border-radius:18px;background:var(--card-bg);backdrop-filter: blur(6px);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+      .invitation-title{font-size:28px;margin:0 0 10px;text-align:center}
+      .name-script{font-family:'Amiri','Scheherazade New','Traditional Arabic',serif; font-size:34px; line-height:1.35; color:#0e2a45; font-weight:700; letter-spacing:0}
+      .invitation-sub{font-size:16px;opacity:0.9;margin:0 0 16px;text-align:center}
+      .invitation-body{font-size:18px;line-height:1.9;white-space:pre-line;color:#0e2a45}
+      .names{margin:16px 0;padding:12px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}
+      .names h3{margin:0 0 8px;font-size:20px}
+      .row{display:flex;gap:12px;flex-wrap:wrap}
+      .row .col{flex:1 1 280px;background:rgba(255,255,255,0.04);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06)}
+      .label{opacity:0.9}
+      .value{font-weight:700}
+      .top-actions{display:flex;justify-content:space-between;align-items:center;margin:12px 0}
+      .btn.back{background:transparent;border:1px solid rgba(255,255,255,0.18)}
+      .blessing{font-size:18px;text-align:center;margin-bottom:12px}
+
+      /* Composed invitation styles (inspired by provided images) */
+      .invite-mech{position:relative;display:block;width:760px;max-width:calc(100% - 24px);margin:0 auto;overflow:hidden;perspective:1000px}
+      .sleeve{position:absolute;left:0;top:0;width:320px;min-height:520px;background:#bfe6ff;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,0.35);padding:22px;cursor:pointer;border:none;transform-origin:left center;transition:transform .7s cubic-bezier(0.22,1,0.36,1), box-shadow .4s ease}
+      .sleeve::before{content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;background:
+        radial-gradient(circle at 20% 18%,rgba(255,255,255,.55),transparent 60%),
+        radial-gradient(circle at 80% 80%,rgba(255,255,255,.35),transparent 55%)}
+      .sleeve .sleeve-text{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#1982c4;font-weight:600;opacity:0.95;font-family:'Segoe Script','Brush Script MT','Lucida Handwriting',cursive;font-size:20px;letter-spacing:.2px;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+      .bands{position:absolute;left:16px;right:16px;top:56%;height:22px;border-radius:6px;z-index:1;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(255,255,255,.55), transparent 60%),
+          linear-gradient(180deg,#caa64a,#e5c76c 30%,#b6913a 60%,#f8e093 90%,#caa64a) top 3px left 0/100% 2px no-repeat,
+          linear-gradient(180deg,#caa64a,#e5c76c 30%,#b6913a 60%,#f8e093 90%,#caa64a) center left 0/100% 2px no-repeat,
+          linear-gradient(180deg,#caa64a,#e5c76c 30%,#b6913a 60%,#f8e093 90%,#caa64a) bottom 3px left 0/100% 2px no-repeat;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.2), inset 0 -1px 1px rgba(255,255,255,.2);
+      }
+      .wax{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;z-index:2;
+        background:radial-gradient(circle at 30% 30%,#ffe7a3 0 35%,#e6c36a 36% 60%,#cba74c 61% 100%);
+        box-shadow:0 6px 16px rgba(0,0,0,0.35), inset 0 2px 6px rgba(255,255,255,0.45), inset 0 -4px 10px rgba(0,0,0,0.3);
+        display:flex;align-items:center;justify-content:center;color:#6b530e;font-weight:800;letter-spacing:1px
+      }
+      .wax:after{content:"";position:absolute;inset:-6px;border-radius:50%;box-shadow:inset 0 0 0 6px rgba(255,255,255,0.14)}
+      .wax span{font-family: Georgia, serif; display:block; line-height:1; text-shadow:0 1px 0 rgba(255,255,255,0.35)}
+      .wax .w1{font-size:18px}
+      .wax .w2{font-size:12px}
+      .wax .w3{font-size:18px}
+      .bands-inner{position:absolute;left:16px;right:16px;top:56%;height:22px;opacity:0.9;pointer-events:none;z-index:0;
+        background:
+          linear-gradient(180deg,#caa64a,#e5c76c 30%,#b6913a 60%,#f8e093 90%,#caa64a) top 3px left 0/100% 2px no-repeat,
+          linear-gradient(180deg,#caa64a,#e5c76c 30%,#b6913a 60%,#f8e093 90%,#caa64a) center left 0/100% 2px no-repeat,
+          linear-gradient(180deg,#caa64a,#e5c76c 30%,#b6913a 60%,#f8e093 90%,#caa64a) bottom 3px left 0/100% 2px no-repeat;
+      }
+      .flowers{position:absolute;left:34px;top:22%;width:120px;height:140px;pointer-events:none;z-index:3}
+      .flowers .stem{position:absolute;bottom:0;width:2px;background:linear-gradient(#86a06a,#6e8b57);border-radius:2px}
+      .flowers .s1{left:20px;height:100px;transform:rotate(-8deg)}
+      .flowers .s2{left:44px;height:120px;transform:rotate(-3deg)}
+      .flowers .s3{left:68px;height:90px;transform:rotate(6deg)}
+      .flowers .bud{position:absolute;width:12px;height:10px;border-radius:10px;background:#fff8d8;box-shadow:0 1px 0 rgba(0,0,0,0.15)}
+      .flowers .b1{left:12px;top:8px}
+      .flowers .b2{left:36px;top:0}
+      .flowers .b3{left:60px;top:12px}
+      .flowers .b4{left:78px;top:22px}
+      .invite-inner{position:relative;width:420px;min-height:520px;background:#ffffff;color:#0e2a45;border-radius:18px;padding:22px;border:2px solid #8ec5ff;box-shadow:0 12px 30px rgba(0,0,0,0.35);opacity:0;transform:translateX(-24px);filter:blur(1px);transition:opacity .5s ease .1s, transform .5s ease .1s, filter .4s ease;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='220' viewBox='0 0 300 220'><g fill='none' stroke='%230e7ac7' stroke-width='1.6' opacity='0.12'><path d='M260 20 c-22 18 -36 38 -56 52' /><path d='M240 10 c-20 20 -42 42 -60 60' /><path d='M20 180 c28 8 46 20 70 30' /><path d='M40 170 c26 10 44 20 66 28' /></g></svg>");background-repeat:no-repeat;background-position:right 24px top 18px, left 24px bottom 18px;background-size:160px auto}
+      .invite-inner .invitation-title{color:#0e4570}
+      .invite-inner section{position:relative;z-index:1;background:rgba(255,255,255,0.96);padding:18px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.06)}
+      /* Leaf border on the right side of the inner card */
+      .invite-inner::before{content:"";position:absolute;top:0;bottom:0;right:0;width:76px;border-top-right-radius:16px;border-bottom-right-radius:16px;opacity:.2;
+        background:#eef8ff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='240' viewBox='0 0 80 240'><g fill='none' stroke='%230e7ac7' stroke-width='2' opacity='0.18'><path d='M10 30 C20 10 40 10 50 30' /><path d='M14 60 C24 40 44 42 54 62' /><path d='M12 100 C22 80 46 78 56 100' /><path d='M18 140 C28 120 48 120 60 138' /><path d='M10 180 C24 160 44 162 58 182' /><path d='M8 220 C22 200 44 200 60 218' /></g><g fill='none' stroke='%230e7ac7' stroke-width='1.4' opacity='0.12'><path d='M52 26 q8 10 0 22' /><path d='M56 58 q8 10 0 22' /><path d='M58 96 q8 10 0 22' /><path d='M62 136 q8 10 0 22' /><path d='M64 176 q8 10 0 22' /></g></svg>") right top / 80px 240px repeat-y;}
+      .invite-inner::after{content:"";position:absolute;top:0;bottom:0;left:0;width:76px;border-top-left-radius:16px;border-bottom-left-radius:16px;opacity:.2;
+        background:#eef8ff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='240' viewBox='0 0 80 240'><g fill='none' stroke='%230e7ac7' stroke-width='2' opacity='0.18'><path d='M70 30 C60 10 40 10 30 30' /><path d='M66 60 C56 40 36 42 26 62' /><path d='M68 100 C58 80 34 78 24 100' /><path d='M62 140 C52 120 32 120 20 138' /><path d='M70 180 C56 160 36 162 22 182' /><path d='M72 220 C58 200 36 200 20 218' /></g><g fill='none' stroke='%230e7ac7' stroke-width='1.4' opacity='0.12'><path d='M28 26 q-8 10 0 22' /><path d='M24 58 q-8 10 0 22' /><path d='M22 96 q-8 10 0 22' /><path d='M18 136 q-8 10 0 22' /><path d='M16 176 q-8 10 0 22' /></g></svg>") left top / 80px 240px repeat-y;}
+      .sleeve:focus-visible{outline:2px solid #fff;outline-offset:3px}
+      .invite-mech.open .sleeve{transform:translateX(430px) rotateY(-12deg);box-shadow:0 8px 24px rgba(0,0,0,0.28)}
+      .invite-mech.open .invite-inner{opacity:1;transform:translateX(0);filter:blur(0)}
+
+      /* Paper noise overlay */
+      .paper-noise{position:absolute;inset:0;border-radius:inherit;pointer-events:none;mix-blend-mode:overlay;opacity:.045;
+        background:
+          repeating-linear-gradient(90deg, rgba(0,0,0,.6) 0 1px, transparent 1px 3px),
+          repeating-linear-gradient(0deg, rgba(0,0,0,.5) 0 1px, transparent 1px 4px);
+      }
+
+      @media (prefers-reduced-motion: reduce){
+        .sleeve{transition:none}
+        .invite-inner{transition:none}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-root">
+      <div id="bg" class="bg-image" style="background-image:url('./ChatGPT Image 9 oct. 2025, 01_37_20.png')"></div>
+
+      <div class="content">
+        <header class="header">
+          <h1 class="site-title">بطاقة الدعوة</h1>
+          <nav class="nav">
+            <a href="./love.html#home" class="nav-link">الرئيسية</a>
+            <a href="./love.html#story" class="nav-link">قصتنا</a>
+            <a href="./love.html#countdown" class="nav-link">الزفاف</a>
+          </nav>
+        </header>
+
+        <main class="main" style="text-align:right">
+          <div class="top-actions">
+            <a href="./love.html" class="btn back">الرجوع للصفحة الرئيسية</a>
+            <a href="./invitation.html" class="btn primary">رؤية الدعوة</a>
+          </div>
+
+          <div class="invite-mech" id="inviteMechanism">
+            <button class="sleeve" type="button" id="sleeveBtn" aria-expanded="false" aria-controls="inviteBody" title="اضغط لفتح الدعوة">
+              <div class="bands"></div>
+              <div class="wax"><span class="w1">Save</span><span class="w2">the</span><span class="w3">Date</span></div>
+              <div class="flowers">
+                <span class="stem s1"></span>
+                <span class="stem s2"></span>
+                <span class="stem s3"></span>
+                <span class="bud b1"></span>
+                <span class="bud b2"></span>
+                <span class="bud b3"></span>
+                <span class="bud b4"></span>
+              </div>
+              <div class="sleeve-text">Saying Yes<br/>to a forevership</div>
+            <span class="paper-noise"></span>
+            </button>
+            <div class="invite-inner" id="inviteBody">
+              <div class="bands-inner"></div>
+              <span class="paper-noise"></span>
+              <section>
+                <div class="blessing">بسم الله الرحمن الرحيم</div>
+                <div class="blessing">اللهم صلِّ وسلّم وبارك على سيدنا محمد وعلى آله وصحبه أجمعين</div>
+
+            <p class="invitation-body" style="text-align:center">
+              <strong>بعد عطر السلام، ونبض القلوب بالمحبة والوئام،</strong><br/>
+              يسرّنا، نحن <strong>عائلة بوزياني</strong> و <strong>عائلة شيحة</strong>،<br/>
+              أن نزفّ إليكم بشرى زفاف أبنائنا:
+            </p>
+
+            <h2 class="invitation-title name-script"><strong>حسّان بن يوسف بوزياني</strong></h2>
+            <div style="text-align:center;font-weight:700;margin:6px 0">و</div>
+            <h2 class="invitation-title name-script"><strong>شيماء بنت عماد شيحة</strong></h2>
+
+            <p class="invitation-body" style="text-align:center">
+              وذلك بمشيئة الله يوم<br/>
+              📅 <strong>السبت 22&#160;أوت&#160;2026</strong><br/>
+              📍 <strong>بـ صالة أفراح الملوك</strong><br/>
+              ⏰ <strong>على الساعة التاسعة ليلاً</strong>
+            </p>
+
+            <p class="invitation-body" style="text-align:center">
+              <strong>نتشرّف بحضوركم ومشاركتكم فرحتنا،</strong><br/>
+              <strong>فبوجودكم تكتمل سعادتنا، وبدعائكم تُبارك أيامنا</strong>
+            </p>
+
+            <p class="muted" style="text-align:center;margin-top:12px"><strong>دامت دياركم عامرة بالأفراح والمسرّات</strong></p>
+
+            <div style="text-align:center;margin-top:18px">
+              <a href="./love.html#countdown" class="btn primary">العودة&#160;إلى&#160;العدّ&#160;التنازلي</a>
+            </div>
+          </section>
+            </div>
+          </div>
+        </main>
+
+        <footer class="footer"><p>مصنوع بحب — حسان ❤️ شيماء</p></footer>
+      </div>
+    </div>
+  <script>
+      (function(){
+        var mech = document.getElementById('inviteMechanism');
+        var btn = document.getElementById('sleeveBtn');
+        if(!mech || !btn) return;
+        function toggle(force){
+          var isOpen = force !== undefined ? !!force : !mech.classList.contains('open');
+          mech.classList.toggle('open', isOpen);
+          btn.setAttribute('aria-expanded', String(isOpen));
+        }
+        btn.addEventListener('click', function(){ toggle(); });
+        btn.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
+      document.addEventListener('click', function(e){
+          var within = mech.contains(e.target);
+          if(!within && mech.classList.contains('open')){ mech.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+        });
+        document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ mech.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }});
+      })();
+    </script>
+  </body>
+</html>
