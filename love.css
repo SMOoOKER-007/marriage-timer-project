@@ -12,7 +12,7 @@ html{
 .app-root{min-height:100vh;position:relative;overflow:hidden}
 
 /* Background image layer */
-.bg-image{position:fixed;inset:0;background-image: url('./IMG-20240204-WA0061.jpg');background-size:cover;background-position:center;background-attachment:fixed;transition:opacity 1s ease, transform 1s ease;filter:brightness(0.6);z-index:0}
+.bg-image{position:fixed;inset:0;background-image: url('IMG-20240204-WA0061.jpg');background-size:cover;background-position:center;background-attachment:fixed;transition:opacity 1s ease, transform 1s ease;filter:brightness(0.6);z-index:0}
 
 /* Content area */
 .content{position:relative;z-index:2;padding:24px}
@@ -42,11 +42,33 @@ html{
 .muted{font-size:12px;opacity:0.85;margin-top:8px}
 .footer{margin-top:24px;opacity:0.9}
 
-/* Responsive */
-@media (min-width:768px){
-  .site-title{font-size:34px}
-  .hero-title{font-size:44px}
-  .lead{font-size:18px}
+/* Responsive baseline and device consistency */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+*{box-sizing:border-box}
+
+/* Fluid typography and spacing */
+.site-title{font-size:clamp(22px,3.5vw,34px)}
+.hero-title{font-size:clamp(26px,5.2vw,44px)}
+.lead{font-size:clamp(14px,2.3vw,18px)}
+.content{padding:clamp(16px,3.5vw,24px)}
+.main{max-width:min(920px,100% - clamp(16px,5vw,48px));margin:20px auto}
+
+/* Navigation wraps nicely on small screens */
+.header{gap:8px}
+.nav{flex-wrap:wrap;row-gap:8px}
+
+/* Avoid jank on mobile where background-attachment: fixed is buggy */
+@media (max-width:1024px), (hover:none) and (pointer:coarse){
+  .bg-image{background-attachment:scroll}
+}
+
+/* Fine-tune small phones */
+@media (max-width:480px){
+  .actions{flex-wrap:wrap}
+  .countdown{gap:8px}
+  .count-item{padding:6px 8px}
+  .count-number{font-size:20px}
+  .count-label{font-size:11px}
 }
 
 /* Small decorative heart */
